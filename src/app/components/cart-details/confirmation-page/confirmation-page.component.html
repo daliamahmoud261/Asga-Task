@@ -42,38 +42,34 @@
         <mat-divider></mat-divider>
         @for (item of items; track $index) {
         <div class="flex p-[20px] items-center mb-[40px]">
-          <img  src="{{item.ProductImg}}"
+          <img  src="{{item.ProductImg}}" class="w-[150px]"
           alt="" srcset="" />
           <div class="flex flex-col ms-[16px]">
             <span class="text-[#313131] text-base font-medium">{{item?.ProductName}} </span>
             <div class="mt-[4px] flex gap-x-3.5">
               <span class="text-[#313131] text-xs font-medium">{{ "items" | translate }} {{item?.quantity}}
               </span>
-              <span class="font-bold text-xs text-[#C9282E]">{{item?.total_amount + item?.menu_item?.addon_data?.total_price}} EGP </span>
+              <span class="font-bold text-xs text-[#C9282E]">{{item?.ProductPrice }} EGP </span>
             </div>
           </div>
         </div>
         }
 
-        <mat-divider></mat-divider>
-        <div class="flex justify-between p-[20px]">
-          <div class="text-sm text-[#313131]">{{ "Orders" | translate }}</div>
-          <div class="text-xs text-[#313131] font-medium">{{totalOrder?.sub_total}} EGP</div>
-        </div>
+    
         <mat-divider></mat-divider>
         <div class="flex justify-between p-[20px]">
           <div class="text-sm text-[#313131]">{{ "Delivery" | translate }}</div>
-          <div class="text-xs text-[#313131] font-medium">{{totalOrder?.delivery_amount}} EGP</div>
+          <div class="text-xs text-[#313131] font-medium">20 EGP</div>
         </div>
         <mat-divider></mat-divider>
         <div class="flex justify-between p-[20px]">
           <div class="text-sm text-[#313131]">{{ "VAT" | translate }}</div>
-          <div class="text-xs text-[#313131] font-medium">  {{totalOrder?.vat_amount}} EGP</div>
+          <div class="text-xs text-[#313131] font-medium">  {{totalOrder*(0.26)}} EGP</div>
         </div>
         <mat-divider></mat-divider>
         <div class="flex justify-between p-[20px]">
           <div class="text-sm text-[#313131]">{{ "Total" | translate }}</div>
-          <div class="text-xs text-[#313131] font-medium">{{totalOrder?.total}} EGP</div>
+          <div class="text-xs text-[#313131] font-medium">{{totalOrder+totalOrder*(0.26)}} EGP</div>
         </div>
       </div>
 
@@ -89,7 +85,7 @@
             <mat-radio-button value="1"></mat-radio-button>
           </mat-radio-group>
           <img src="assets/imgs/money.svg" alt="" srcset="" />
-          <div class="flex flex-col text-[#313131] ms-[12px]">
+          <div class="flex flex-col text-[#313131] ms-[12px] justify-center ">
             <span class="font-medium text-sm">{{totalOrder?.total}}  </span>
             <span class="font-normal text-xs"
               >{{ "cashOnDel" | translate }}

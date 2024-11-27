@@ -2,6 +2,7 @@
   "CreateAccount": "Create Account",
   "DontHaveAccount": "You don't have an account?",
   "SignIn": "Sign In",
+ 
   "PhoneNum": "Phone Number",
   "WhenYouCreateAnAccountYouAccept": "When you create an account you accept ",
   "theTerms&conditions": "the terms&conditions",
@@ -82,6 +83,7 @@
     "goToMap": "Share Address",
     "Categories": "Categories",
     "Products": "Our Products",
-    "findMeals": "Find favorite meals"
+    "findMeals": "Find favorite meals",
+    "goHome":"Home"
   }
 }

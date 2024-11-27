@@ -2,7 +2,7 @@
 
 export const allRoutes = [
   {
-    path: 'get-started',
+    path: '',
     loadComponent: () =>
       import(
         '../app/components/home-page/get-started/get-started.component'
@@ -38,13 +38,6 @@ export const allRoutes = [
       import(
         './components/cart-details/cart-container/cart-container.component'
       ).then((c) => c.CartContainerComponent),
-  },
-  {
-    path: 'products/:id',
-    loadComponent: () =>
-      import(
-        '../app/components/home-page/items-section/items-section.component'
-      ).then((c) => c.ItemsSectionComponent),
   },
   {
     path: 'order-confirmation',

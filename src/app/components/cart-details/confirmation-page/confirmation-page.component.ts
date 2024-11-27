@@ -30,7 +30,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ConfirmationPageComponent {
   paymentMethod!: string;
   items: any = [];
-  totalOrder!: any;
+  totalOrder: any=0;
   Loader: boolean = false;
   spinnerLoader: boolean = false;
   location: any = 'Misr El gdida';
@@ -40,11 +40,16 @@ export class ConfirmationPageComponent {
     private menuAndCartService: MenuAndCartService, private router :Router
   ) {}
   ngOnInit(): void {
+    this.items= JSON.parse(localStorage.getItem('cartItems')??'');  
     if (localStorage.getItem('newSelectedLocation')) {
       this.location = JSON.parse(
         localStorage.getItem('newSelectedLocation') ?? ''
       );
     } 
+    this.items.forEach((element:any) => {
+      this.totalOrder =this.totalOrder+ element?.ProductPrice;
+      
+    });
   }
 
  
