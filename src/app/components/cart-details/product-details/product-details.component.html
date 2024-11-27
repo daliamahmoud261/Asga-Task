@@ -1,0 +1,94 @@
+<div class="flex flex-col items-center bg-[#F4F5F7]">
+  <div class="md:max-w-[40vw] w-full">
+    <div class="flex flex-col items-center w-full">
+      <div class="flex p-[16px] bg-white w-full rounded-b-2xl">
+        <mat-icon
+          class="text-[#7A869A] rtl:rotate-180 cursor-pointer"
+          [routerLink]="['/sign-in']"
+          >keyboard_arrow_left</mat-icon
+        >
+        <div
+          class="text-ta-black-300 text-base font-semibold flex justify-center w-full"
+        >
+          {{ "productDetails.ProductDetails" | translate }}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-[16px] max-w-[100vw] flex">
+      <div class="flex gap-x-[10px] flex-col w-full items-center px-[15px]">
+        <div class="bg-white flex flex-col w-full rounded-2xl px-[16px]">
+          <div class="text-ta-black-200 m-0 !mt-[24px] text-lg font-bold">
+            {{ product[0]?.ProductName }} 
+          </div>
+          <div class="text-ta-black-300 m-0 !my-[10px]">
+            {{ product[0]?.details }}
+          </div>
+          <div class="text-ta-black-250 text-sm !mb-[10px]">
+            <span class="font-medium"
+              >{{ "productDetails.Startfrom" | translate }}
+              <span class="font-bold"> {{ product[0]?.ProductPrice }} </span></span
+            >
+          </div>
+          <div class="w-full h-[1px] bg-ta-gray-500"></div>
+          <img
+            src="{{ product[0]?.ProductImg }}"
+            class="rounded-2xl w-full mb-[16px] pt-[12px] px-[15px]"
+            alt=""
+            onerror="this.src= 'assets/imgs/empty.png'"
+          />
+        </div>
+
+        <div
+          class="bg-white flex flex-col w-full rounded-2xl p-[20px] mt-[16px]"
+        >
+          <div class="text-ta-black-300 font-[14px] font-[600] text-start">
+            {{ "productDetails.selectSize" | translate }}
+          </div>
+          <div class="w-full h-[1px] bg-ta-gray-500 my-[16px]"></div>
+          <app-selection-options
+            [selectionOptions]="selectionOptions"
+            (selection)="selectedSizes($event)"
+          ></app-selection-options>
+        </div>
+
+        <div
+          class="bg-white flex flex-col w-full rounded-2xl p-[20px] mt-[16px]"
+        >
+          <div class="text-ta-black-300 font-[14px] font-[600] text-start">
+            {{ "productDetails.addNote" | translate }}
+          </div>
+          <div class="w-full h-[1px] bg-ta-gray-500 my-[16px]"></div>
+          <div class="relative">
+            <textarea
+              id="note"
+              name="note"
+              placeholder="Write note"
+              rows="8"
+              class="bg-ta-gray-500 px-[16px] py-[10px] rounded-[15px] my-2 w-full"
+              [(ngModel)]="note"
+            ></textarea>
+          </div>
+        </div>
+        <div class="mx-[20px] gap-x-[7px] w-full mb-[10px] flex justify-center mt-[24px]">
+          <span>QTY:</span>
+          <button class=" bg-[#C9282E] rounded-2xl w-[20px] h-[20px]" (click)="changeCount('decrement')">-</button>
+          <span class="counter"> {{defaultCount}}</span>
+          <button class="bg-[#C9282E] rounded-2xl w-[20px] h-[20px]" (click)="changeCount('increment')">+</button>
+      </div>
+     
+        <div class="mx-[20px] w-full mb-[10px]">
+          <button class="primary-button mt-[40px] w-full" (click)="submit()">
+            @if (loadingBtn) {
+              <app-spinner-btn></app-spinner-btn>
+            }
+            @else {
+              {{ "productDetails.Addtocart" | translate }} 
+            }
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-shared-loading [Loader]="Loader"></app-shared-loading>

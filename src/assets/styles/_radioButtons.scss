@@ -1,0 +1,21 @@
+
+.mdc-radio__outer-circle
+{
+    border: 7px solid #C1C7D0 !important;
+}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:enabled:checked+.mdc-radio__background .mdc-radio__outer-circle {
+    // border-color: #C9282E !important;
+    border: 7px solid #C9282E !important;
+}
+
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:enabled+.mdc-radio__background .mdc-radio__inner-circle {
+    border-color: #fff !important;
+}
+.selection-prod-section{
+    .mat-internal-form-field{
+        width: 100% !important;
+        .mdc-label{
+            width: 100% !important;
+        }
+    }
+}

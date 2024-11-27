@@ -1,0 +1,18 @@
+<mat-radio-group aria-labelledby="example-radio-group-label " class="example-radio-group" [(ngModel)]="selectedOption"
+(change)="showSelectedOption()">
+    @for (option of selectionOptions; track $index) {
+    <div class="bg-ta-gray-500 px-[16px] py-[10px] rounded-[15px] my-2 w-full selection-prod-section">
+        <mat-radio-button class="example-radio-button w-full"
+        [value]="option.id">
+            <div class="flex justify-between w-full">
+                <span>
+                    {{option.name}}
+                </span>
+                <span class="text-ta-orange-200 font-bold text-[12px]">
+                    {{option.price}}
+                </span>
+            </div>
+        </mat-radio-button>
+    </div>
+    }
+</mat-radio-group>

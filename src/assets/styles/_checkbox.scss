@@ -1,0 +1,13 @@
+.mdc-checkbox:hover .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background,
+.mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background{
+    border: #C9282E !important;
+    background-color: #C9282E !important;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background{
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}

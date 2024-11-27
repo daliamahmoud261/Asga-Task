@@ -1,0 +1,67 @@
+<div class="bg-ta-white px-[20px] py-[16px]">
+  <div class="flex justify-between">
+    <div class="flex items-center">
+      <div class="flex items-center gap-x-1">
+        <img src="assets/imgs/spaggiLogo.svg" alt="" srcset="" />
+        <span class="text-ta-gray-400 text-sm font-normal">Shawrmaty Menu </span>
+      </div>
+      <div
+        class="ms-[8px] bg-[#E9E9E9FA] rounded-2xl w-[73px] h-[24px] flex justify-evenly"
+      >
+        @if (language =='en') {
+        <span (click)="switchLanguage('ar')" class="cursor-pointer">ع</span>
+        } @else {
+        <span (click)="switchLanguage('en')" class="cursor-pointer">en</span>
+        }
+        <div class="py-[5px]">
+          <mat-divider [vertical]="true"></mat-divider>
+        </div>
+        <img
+          src="assets/imgs/saudiFlag.svg"
+          width="15"
+          height="15"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="flex items-center">
+      <div class="">
+        <mat-icon matBadge="{{ items?.length }}" matBadgeOverlap="false">
+          <img
+            src="assets/imgs/shopping-cart.svg"
+            class=" cursor-pointer"
+            srcset=""
+            (click)="cartRedirection()"
+          />
+        </mat-icon>
+      </div>
+
+      <div
+        class="menu-trigger ms-[24px]"
+        (click)="isOpen = !isOpen"
+        [routerLink]="['/info']"
+      >
+        <img src="assets/imgs/menu.svg" class="relative" alt="" srcset="" />
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between items-baseline">
+    <div class="flex mt-[35px]">
+      <div>
+        <img src="assets/imgs/Location-arrow.svg" alt="" />
+      </div>
+      <div class="flex flex-col">
+        {{ location }}
+        <span class="text-[#C9282E] text-[12px] font-bold">
+          {{ "DeliverTO" | translate }}
+        </span>
+      </div>
+    </div>
+    <div>
+      <img src="assets/imgs/Arrow-down-3.svg" alt=""
+      [routerLink]="['/change-location']" class="cursor-pointer" />
+    </div>
+  </div>
+</div>
+

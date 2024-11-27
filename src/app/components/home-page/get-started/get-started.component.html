@@ -1,0 +1,26 @@
+<div class="lg:flex justify-center items-center">
+  <div class="relative">
+    <img src="assets/imgs/onboard.svg" class="h-[100vh] w-full" alt="" />
+    <div
+      class="text-ta-white absolute translate-x-[-50%] w-full translate-y-[-50%] top-[60%] left-[50%] text-center"
+    >
+      <div class="font-bold text-3xl flex justify-center items-center">
+        <div class="w-[247px]">{{ "HOME.searchFood" | translate }}</div>
+      </div>
+      <div
+        class="font-medium text-ta-white flex flex-col justify-center items-center text-center mt-[16px]"
+      >
+        {{ "HOME.shareADD" | translate }}
+        <button
+          class="bg-ta-orange-200 rounded-2xl py-[16px] px-[32px] mt-[48px]"
+          [routerLink]="['/g-maps']"
+        >
+          <div class="flex justify-center items-end text-lg">
+           {{"HOME.goToMap" |translate}}
+            <mat-icon class="ms-[8px]">arrow_right_alt</mat-icon>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

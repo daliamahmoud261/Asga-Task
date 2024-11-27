@@ -1,0 +1,45 @@
+.mat-mdc-form-field {
+  width: 100% !important;
+}
+.mat-mdc-text-field-wrapper {
+  border-radius: 14px !important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before,
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+  border: 0 !important;
+  border-color: transparent !important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #f5f9fe !important;
+}
+mat-label {
+  font-family: "inter", "tajwal" !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color: #7c8ba0 !important;
+}
+.white-search {
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: white !important;
+  }
+}
+.white-search-border {
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: white !important;
+    border: 1px solid #e1e1e1;
+  }
+}
+.white-search{
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: white !important;
+        }
+}
+
+.input-text
+{
+    padding: 10px 16px;
+    border: 1px solid #E1E1E1;
+    border-radius: 16px;
+
+}

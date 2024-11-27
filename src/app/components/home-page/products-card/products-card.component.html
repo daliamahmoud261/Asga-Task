@@ -1,0 +1,25 @@
+<div class="mt-[16px] max-w-[100vw] flex overflow-auto scrollBar ">
+    <div
+      class="flex items-baseline flex-col w-full overflow-auto scrollBar items-center"
+    >
+      @for (product of products; track $index) {
+      <div class="bg-ta-white max-w-[335px] w-full h-[275px] rounded-2xl mb-[16px] pt-[12px] px-[15px]
+      flex flex-col" (click)="goToProdDetails(product)">
+        <img src="{{ product.ProductImg }}" class="rounded-2xl h-[180px]" alt=""
+        onerror="this.src= 'assets/imgs/empty.png'" 
+        />
+        <div class="!ms-[12px]">
+          <div class="text-ta-black-200 m-0 !mt-[16px] text-lg font-bold">
+            {{ product.ProductName }}
+          </div>
+          <div class="text-ta-black-250 text-sm mt-[4px]">
+            <span class="font-medium"
+              >Start from
+              <span class="font-bold"> {{ product.ProductPrice }} </span></span
+            >
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>

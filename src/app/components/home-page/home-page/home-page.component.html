@@ -1,0 +1,28 @@
+<div
+  class="bg-[#F4F5F7] h-full md:flex flex-col items-center px-[20px] overflow-auto"
+>
+  <div class="md:max-w-[40vw] w-full">
+    <div class="mb-[24px]">
+      <app-nav-bar></app-nav-bar>
+    </div>
+    <div class="white-search">
+      <mat-form-field class="example-full-width">
+        <mat-icon matPrefix>search</mat-icon>
+        <mat-label>{{ "HOME.findMeals" | translate }} </mat-label>
+        <input
+          type="text"
+          matInput
+          (input)="search()"
+          [(ngModel)]="searchKeyword"
+        />
+      </mat-form-field>
+    </div>
+    <div class="flex flex-col mb-[24px]">
+      <div class="text-ta-black-200 font-bold text-base">
+        {{ "HOME.Products" | translate }}
+      </div>
+      <app-products-card [products]="products"></app-products-card>
+    </div>
+  </div>
+</div>
+<app-shared-loading [Loader]="Loader"></app-shared-loading>

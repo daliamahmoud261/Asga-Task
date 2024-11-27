@@ -1,0 +1,35 @@
+<div class="flex flex-col items-center bg-[#F4F5F7] h-full overflow-y-auto">
+  <div class="md:max-w-[40vw] w-full">
+    <div class="flex flex-col items-center w-full">
+      <div class="flex p-[16px] bg-white w-full rounded-b-2xl">
+        <mat-icon
+          class="text-[#7A869A] rtl:rotate-180 cursor-pointer"
+          [routerLink]="['/sign-in']"
+          >keyboard_arrow_left</mat-icon
+        >
+        <div
+          class="text-ta-black-300 text-base font-semibold flex justify-center w-full"
+        >
+          {{ "productDetails.cart" | translate }}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-[16px] max-w-[100vw] flex mx-[15px]">
+        <div class="w-full">
+            <app-cart-item > </app-cart-item>
+          <div class="bg-white my-5 p-[20px] rounded-2xl">
+            <div>
+                <button class="primary-button w-full" [routerLink]="['/order-confirmation']" >
+                  {{"productDetails.continue"|translate}}
+                </button>
+              </div>
+              <div class="mt-[16px]">
+                <button class="secondary-button w-full font-semibold"
+                [routerLink]="['/home']" >{{"productDetails.Backtohome"|translate}}</button>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

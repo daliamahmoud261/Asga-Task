@@ -1,0 +1,24 @@
+.primary-button {
+    padding-block:12px;
+    outline: none !important;
+    color: white;
+    background: #C9282E;
+    border-radius: 16px;
+  
+    :focus-visible {
+      outline: none !important;
+    };  
+  }
+  
+.secondary-button {
+    padding-block:12px;
+    outline: none !important;
+    color: black;
+    background: #F4F5F7;
+    border-radius: 16px;
+  
+    :focus-visible {
+      outline: none !important;
+    };  
+  }
+  

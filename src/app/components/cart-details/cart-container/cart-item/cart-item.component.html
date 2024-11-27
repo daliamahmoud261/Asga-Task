@@ -1,0 +1,44 @@
+@for (cart of carts; track $index) {
+<div class="bg-ta-white w-full rounded-2xl mb-[16px] py-2 px-[15px] flex flex-col">
+  <div class="mt-[16px] max-w-[100vw]">
+    <div class="flex justify-center items-center">
+      <div class="w-[25%]">
+        <img
+          src="{{cart.ProductImg}}"
+          class="rounded-2xl w-full"
+          alt=""
+          onerror="this.src= 'assets/imgs/empty.png'"
+        />
+      </div>
+      <div class="w-[75%] ps-5">
+        <div class="w-full flex justify-end cursor-pointer">
+          <img
+            src="assets/imgs/trash.svg"
+            alt=""
+            (click)="deleteItemFromCart(cart.id, $index)"
+          />
+        </div>
+        <div class="text-ta-black-300 text-[16px] w-full me-2">
+          {{ cart.ProductName }}
+        </div>
+        <div class="flex justify-between items-center">
+          <div
+            class="flex bg-ta-gray-500 px-[8px] py-[5px] rounded-[15px] my-2"
+          >
+            <img src="assets/imgs/minus-circle.svg" alt="minus-circle"
+            (click)="editQty('decrement',$index,cart.ProductId)" />
+            <div class="px-4">
+              {{ cart.quantity }}
+            </div>
+            <img src="assets/imgs/add-circle.svg" alt="add-circle" 
+            (click)="editQty('increment',$index,cart.ProductId)"/>
+          </div>
+          <div class="text-ta-orange-200 font-bold text-[12px]">
+            {{ cart.ProductPrice }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}

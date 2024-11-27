@@ -1,0 +1,112 @@
+<div class="flex flex-col items-center bg-[#F4F5F7]">
+  <div class="md:max-w-[40vw] w-full">
+    <div class="flex flex-col items-center w-full">
+      <div class="flex p-[16px] bg-white w-full rounded-b-2xl">
+        <mat-icon
+          class="text-[#7A869A] rtl:rotate-180 cursor-pointer"
+          [routerLink]="['/cart']"
+          >keyboard_arrow_left</mat-icon
+        >
+        <div
+          class="text-base font-semibold flex justify-center w-full text-[#172B4D]"
+        >
+          {{ "ConfirmOrder" | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="mx-[15px]">
+      <div
+        class="flex mt-[24px] mb-[16px] flex-col bg-white w-full rounded-2xl"
+      >
+        <div class="flex p-[16px]">
+          <div class="p-[20px] text-[#313131] font-bold">
+            {{ "DeliveryTosavedAddress" | translate }}
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="flex gap-x[14px] p-[16px] items-center gap-x-[20px]">
+          <img src="assets/imgs/map.svg" alt="" srcset="" />
+          <div class="flex flex-col">
+            <div>{{ location }}</div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex mt-[24px] mb-[16px] flex-col bg-white w-full rounded-2xl"
+      >
+        <div class="flex p-[16px]">
+          <div class="p-[20px] text-[#313131] font-bold">
+            {{ "MyOrders" | translate }}
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        @for (item of items; track $index) {
+        <div class="flex p-[20px] items-center mb-[40px]">
+          <img  src="{{item.ProductImg}}"
+          alt="" srcset="" />
+          <div class="flex flex-col ms-[16px]">
+            <span class="text-[#313131] text-base font-medium">{{item?.ProductName}} </span>
+            <div class="mt-[4px] flex gap-x-3.5">
+              <span class="text-[#313131] text-xs font-medium">{{ "items" | translate }} {{item?.quantity}}
+              </span>
+              <span class="font-bold text-xs text-[#C9282E]">{{item?.total_amount + item?.menu_item?.addon_data?.total_price}} EGP </span>
+            </div>
+          </div>
+        </div>
+        }
+
+        <mat-divider></mat-divider>
+        <div class="flex justify-between p-[20px]">
+          <div class="text-sm text-[#313131]">{{ "Orders" | translate }}</div>
+          <div class="text-xs text-[#313131] font-medium">{{totalOrder?.sub_total}} EGP</div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="flex justify-between p-[20px]">
+          <div class="text-sm text-[#313131]">{{ "Delivery" | translate }}</div>
+          <div class="text-xs text-[#313131] font-medium">{{totalOrder?.delivery_amount}} EGP</div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="flex justify-between p-[20px]">
+          <div class="text-sm text-[#313131]">{{ "VAT" | translate }}</div>
+          <div class="text-xs text-[#313131] font-medium">  {{totalOrder?.vat_amount}} EGP</div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="flex justify-between p-[20px]">
+          <div class="text-sm text-[#313131]">{{ "Total" | translate }}</div>
+          <div class="text-xs text-[#313131] font-medium">{{totalOrder?.total}} EGP</div>
+        </div>
+      </div>
+
+      <div class="flex mt-[16px] flex-col bg-white w-full rounded-2xl">
+        <div class="flex p-[16px]">
+          <div class="p-[20px] text-[#313131] font-bold">
+            {{ "PaymentMethod" | translate }}
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="p-[20px] flex">
+          <mat-radio-group [(ngModel)]="paymentMethod">
+            <mat-radio-button value="1"></mat-radio-button>
+          </mat-radio-group>
+          <img src="assets/imgs/money.svg" alt="" srcset="" />
+          <div class="flex flex-col text-[#313131] ms-[12px]">
+            <span class="font-medium text-sm">{{totalOrder?.total}}  </span>
+            <span class="font-normal text-xs"
+              >{{ "cashOnDel" | translate }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <button class="primary-button mt-[48px] w-full" >
+        
+            {{ "CompleteOrder" | translate }}
+          
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-shared-loading [Loader]="Loader"></app-shared-loading>
